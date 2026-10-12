@@ -4,7 +4,7 @@ Static marketing website for **Brian Ward Appraisal** — Brian Ward, California
 Real Estate Appraiser (license AR036053), appraising since 2004.
 
 - Pure static HTML/CSS/JS, no build step. Deployed on Cloudflare Pages.
-- 14 service pages, 17 county hub pages, 126 community pages.
+- 13 service pages, 17 county hub pages, 126 community pages.
 - Full SEO: per-page canonical, OpenGraph/Twitter cards, JSON-LD (LocalBusiness, Service, Place,
   BreadcrumbList, FAQPage, ItemList, OfferCatalog, Person), sitemap.xml, robots.txt, and llms.txt
   for AI retrieval.
