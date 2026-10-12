@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Brian Ward Appraisal">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#1f4d3d"/><stop offset="1" stop-color="#102f24"/></linearGradient></defs>
+  <rect width="64" height="64" rx="13" fill="url(#g)"/>
+  <path d="M14 36.5 32 22l18 14.5" fill="none" stroke="#c9a227" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M19 35v12h26V35" fill="none" stroke="#ffffff" stroke-width="3.1" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M28 47v-7h8v7" fill="none" stroke="#c9a227" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
