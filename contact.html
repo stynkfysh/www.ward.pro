@@ -55,10 +55,10 @@
       <div class="field"><label for="name">Name *</label><input type="text" id="name" name="name" required></div>
       <div class="field"><label for="email">Email *</label><input type="email" id="email" name="email" required></div>
       <div class="field"><label for="phone">Phone</label><input type="tel" id="phone" name="phone"></div>
-      <div class="field"><label for="street-address">Street Address</label><input type="text" id="street-address" name="street-address"></div>
+      <div class="field"><label for="street-address">Address of Property to Be Appraised</label><input type="text" id="street-address" name="street-address"></div>
       <div class="field-row">
-        <div class="field"><label for="city">City</label><input type="text" id="city" name="city"></div>
-        <div class="field"><label for="zipcode">Zip Code</label><input type="text" id="zipcode" name="zipcode"></div>
+        <div class="field"><label for="city">Property City</label><input type="text" id="city" name="city"></div>
+        <div class="field"><label for="zipcode">Property Zip Code</label><input type="text" id="zipcode" name="zipcode"></div>
       </div>
       <div class="field"><label for="appraisal-purpose">Appraisal Purpose *</label>
         <select id="appraisal-purpose" name="appraisal-purpose" required><option value="">- Select Appraisal Purpose -</option>
@@ -73,6 +73,7 @@
 <option value="insurance-dispute">Insurance Dispute</option>
 <option value="bonds">Bonds</option>
 <option value="other">Other</option></select></div>
+      <div class="field" id="dod-field" style="display:none;"><label for="date-of-death">Date of Death *</label><input type="date" id="date-of-death" name="date-of-death"><p class="field-note">Value will be estimated as of this date. If the exact date isn't known, enter your best estimate and note it below.</p></div>
       <div class="field"><label for="appraisal-type">Appraisal Type</label>
         <select id="appraisal-type" name="appraisal-type"><option value="">- Select Appraisal Type -</option>
 <option value="basic-desktop">Basic Desktop Appraisal &mdash; $299</option>
@@ -165,5 +166,24 @@
   <div class="foot-bar"><div class="wrap">&copy; 2026 Brian Ward Appraisal. All rights reserved. Brian Ward, California Certified Residential Real Estate Appraiser, License AR036053. Specialty appraisals for date of death, step-up basis, estates and trusts, gift tax, private party transactions, divorce and litigation.</div></div>
 </footer>
 <script src="main.js" defer></script>
+<script>
+(function () {
+  var wrap = document.getElementById('dod-field');
+  if (!wrap) return;
+  var form = wrap.closest('form');
+  var purpose = form && form.querySelector('select[name="appraisal-purpose"]');
+  var dod = document.getElementById('date-of-death');
+  if (!purpose || !dod) return;
+  dod.max = new Date().toISOString().slice(0, 10);
+  function toggleDod() {
+    var on = purpose.value === 'date-of-death';
+    wrap.style.display = on ? '' : 'none';
+    dod.required = on;
+    if (!on) dod.value = '';
+  }
+  purpose.addEventListener('change', toggleDod);
+  toggleDod();
+})();
+</script>
 </body>
 </html>
